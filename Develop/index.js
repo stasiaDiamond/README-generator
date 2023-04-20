@@ -64,27 +64,35 @@ inquirer
         const output = `# ${ans.projectTitle}
 
         ## Description
+
         ${ans.description}
 
         ## Table of Contents
+
         ${ans.tableContents}
 
         ## Installation
+
         ${ans.installation}
 
         ## Usage
+
         ${ans.usage}
 
         ## License
+
         ${ans.license} 
         
         ## Contributing
+
         ${ans.contributing}
 
         ## Tests
+
         ${ans.tests}
 
         ## Questions
+        
         Link to my GitHub: <https://github.com/${ans.questionGitUserName}>
         For additional questions, email: ${ans.questionEmail}
         `
