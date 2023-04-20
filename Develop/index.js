@@ -1,9 +1,10 @@
-// TODO: Include packages needed for this application
+// ---BELOW---
+// declaring that file system and inquirer are necessary
 const fs = require("fs");
 const inquirer = require("inquirer");
 
-// TODO: Create an array of questions for user input
-// const questions = [];
+// ---BELOW---
+// setting up inquirer questions
 inquirer
     .prompt([
         {
@@ -14,11 +15,6 @@ inquirer
         {
             name: "description",
             message: "Write a brief description of the project that includes what, why, and how:",
-            type: "input",
-        },
-        {
-            name: 'tableContents',
-            message: "Create a Table of Contents:",
             type: "input",
         },
         {
@@ -59,8 +55,9 @@ inquirer
         }
         
     ])
+    // ---BELOW---
+// setting all answers to Markdown syntax
     .then((ans) => {
-        console.log(ans);
         const output = `# ${ans.projectTitle}
 
 ## Description
@@ -69,7 +66,14 @@ ${ans.description}
 
 ## Table of Contents
 
-${ans.tableContents}
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
+
 
 ## Installation
 
@@ -97,30 +101,16 @@ Link to my GitHub: <https://github.com/${ans.questionGitUserName}>
 
 For additional questions, please email: [Contact Email](mailto:${ans.questionEmail})
 `;
-        console.log(output);
+
+// ---BELOW---
+// file system writing the Generated README, including output answers, plus an error/success function
 
         fs.writeFile("GeneratedREADME.md", output, err => {
             if(err){
                 console.log(err);
             } else {
-                console.log("Your README has been generated.");
+                console.log("SWEET! Your README has been generated.");
             }
         });
     });
     
-// TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
-
-// TODO: Create a function to initialize app
-// function init() {}
-
-// Function call to initialize app
-// init();
-
-
-
-
-// WHEN I choose a license for my application from a list of options
-// THEN a badge for that license is added near the top of the README and a notice is added to the section of the README entitled License that explains which license the application is covered under
-// WHEN I click on the links in the Table of Contents
-// THEN I am taken to the corresponding section of the README
