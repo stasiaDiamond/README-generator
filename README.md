@@ -19,6 +19,7 @@ node.js, npm, VS Code, and inquirer required
 ## Usage
 
 Initialize by entering node index.js into your Integrated VS Code Terminal
+[README Generator.webm](https://user-images.githubusercontent.com/122962805/233285527-8ba425b6-a2e0-4024-8be2-cc46d1224033.webm)
 
 ## License
 
